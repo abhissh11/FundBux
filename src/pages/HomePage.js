@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import CampaignsCarousel from "../components/CampaignsCarousel";
 import AboutComponent from "../components/AboutComponent";
+import Features from "../components/Features";
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
       <Hero />
       <CampaignsCarousel />
       <AboutComponent />
+      <Features />
     </div>
   );
 }
