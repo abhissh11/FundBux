@@ -1,0 +1,95 @@
+{
+  "carousel": [
+    {
+      "id": 1,
+      "title": "Support Education for All",
+      "description": "Help us provide quality education to underprivileged children.",
+      "image": "https://images.unsplash.com/photo-1557734864-c78b6dfef1b1?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$5,000",
+      "comments": [
+        "Great cause! Happy to support.",
+        "Education is the key to a better future."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Clean Water Initiative",
+      "description": "Join us in bringing clean water to remote communities.",
+      "image": "https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+      "funds": "$8,000",
+      "comments": ["Water is life. Proud to contribute.", "Every drop counts!"]
+    },
+    {
+      "id": 3,
+      "title": "Healthcare for Homeless",
+      "description": "Providing essential healthcare services to the homeless.",
+      "image": "https://images.unsplash.com/photo-1507653050-4053dc17dfbb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$12,000",
+      "comments": [
+        "Healthcare is a right, not a privilege.",
+        "Thank you for doing this important work."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Tree Plantation Drive",
+      "description": "Help us plant trees to combat climate change.",
+      "image": "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$3,500",
+      "comments": [
+        "Let's make our planet greener!",
+        "Every tree planted makes a difference."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Animal Rescue Mission",
+      "description": "Support our efforts to rescue and rehabilitate stray animals.",
+      "image": "https://images.unsplash.com/photo-1643321613180-68d62b93cb79?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$4,200 ",
+      "comments": [
+        "Animals deserve love and care.",
+        "Thank you for saving lives!"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Food for the Hungry",
+      "description": "Join us in feeding the hungry and reducing food waste.",
+      "image": "https://images.unsplash.com/photo-1643321612557-57cef422f401?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$6,000",
+      "comments": ["No one should go hungry.", "Food is a basic necessity."]
+    },
+    {
+      "id": 7,
+      "title": "Empower Women Entrepreneurs",
+      "description": "Support women entrepreneurs to build sustainable businesses.",
+      "image": "https://images.unsplash.com/photo-1674574124349-0928f4b2bce3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$7,500",
+      "comments": [
+        "Empowered women empower others.",
+        "Supporting women's dreams!"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Youth Sports Program",
+      "description": "Help us provide sports equipment and training to underprivileged youth.",
+      "image": "https://images.unsplash.com/photo-1527617150257-a08333ab99cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$4,800",
+      "comments": ["Sports build character.", "Great initiative for the youth."]
+    },
+    {
+      "id": 9,
+      "title": "Senior Citizen Support",
+      "description": "Providing care and companionship to senior citizens.",
+      "image": "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "funds": "$5,600",
+      "comments": [
+        "Our elders deserve respect and care.",
+        "Thank you for supporting seniors."
+      ]
+    }
+  ]
+}
