@@ -16,7 +16,6 @@ export default function HomePage() {
       <Features />
       <Mission />
       <Cta />
-      <Footer />
     </div>
   );
 }
