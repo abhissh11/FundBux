@@ -16,9 +16,10 @@ export default function Header() {
             <div className="">
               <Link
                 to="/"
-                className="text-2xl font-bold text-emerald-700 hover:border-l-2 px-2 border-emerald-700"
+                className="text-4xl font-bold text-white   
+                bg-emerald-700 px-3 rounded-md hover:scale-110 "
               >
-                FundBux
+                F.
               </Link>
             </div>
             <div className="">
