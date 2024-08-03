@@ -47,7 +47,7 @@ export default function Cta() {
           </Link>
         </div>
       </div>
-      <div className="mt-20 py-20 bg-emerald-700 w-svw flex flex-row flex-wrap gap-10 items-center justify-evenly px-10">
+      <div className="mt-20 py-20 bg-emerald-700 flex flex-row flex-wrap gap-10 items-center justify-evenly ">
         <div className="text-white flex flex-col  gap-3">
           <h1 className="text-5xl font-bold ">50,000</h1>
           <p className="text-lg font-semibold">Signature every hours</p>
