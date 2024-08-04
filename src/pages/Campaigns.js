@@ -1,4 +1,5 @@
 import React from "react";
+import Comp from "../components/Comp";
 
 export default function Campaigns() {
   return (
@@ -17,6 +18,7 @@ export default function Campaigns() {
           help.
         </p>
       </div>
+      <Comp />
     </div>
   );
 }
