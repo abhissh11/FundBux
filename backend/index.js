@@ -12,7 +12,6 @@ const allowedOrigins = ["http://localhost:3000", "https://fund-bux.vercel.app"];
 
 app.use(
   cors({
-    origin: "https://blogsphere-h6tw.onrender.com/",
     origin: (origin, callback) => {
       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
         callback(null, true);
@@ -37,4 +36,14 @@ app.get("/", (req, res) => {
 
 app.listen(4000, () => {
   console.log("Server running on Port: 4000");
+});
+
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  res.status(statusCode).json({
+    success: false,
+    statusCode,
+    message,
+  });
 });

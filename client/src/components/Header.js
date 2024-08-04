@@ -9,7 +9,7 @@ export default function Header() {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="shadow-sm shadow-slate-200">
+    <div className="shadow-sm shadow-slate-200 sticky top-0 bg-white z-50 bg-opacity-95">
       <div className=" flex flex-row justify-between px-6 md:px-14 py-6 items-center">
         <div className="flex flex-row gap-20">
           <div className="flex flex-row-reverse gap-4">
@@ -77,8 +77,8 @@ export default function Header() {
       {/* on small screen */}
       {showMenu && (
         <>
-          <div className="bg-slate-300 h-svh max-w-64">
-            <div className="flex flex-col gap-5 items-center">
+          <div className="h-[100vh] max-w-64 absolute px-4 right-0 bg-white border top-0  ">
+            <div className="flex flex-col gap-5 items-center my-20">
               <Link
                 to="/campaigns"
                 className=" text-lg font-semibold  hover:border-b-2 border-b-emerald-600 p-2 transition-all "
@@ -86,6 +86,7 @@ export default function Header() {
               >
                 Campaigns
               </Link>
+
               <Link
                 to="/about"
                 className=" text-lg font-semibold  hover:border-b-2 border-b-emerald-600 p-2 transition-all "
