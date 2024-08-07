@@ -16,12 +16,12 @@ export default function Hero() {
             </p>
           </div>
           <div className="flex flex-row gap-8">
-            <Link to="/">
+            <Link to="/campaigns">
               <button className="bg-emerald-800 px-4 py-2 md:px-8 md:py-3 rounded-md text-white text-lg font-semibold hover:bg-emerald-900">
                 Get Started
               </button>
             </Link>
-            <Link to="/">
+            <Link to="/about">
               <button
                 className="border border-emerald-800 bg-gray-200 px-4 py-2 md:px-8 md:py-3 
               rounded-md md:text-lg font-semibold text-emerald-800 hover:bg-gray-300"
