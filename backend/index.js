@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import userRoute from "./routes/auth-route.js";
+import campaignRoute from "./routes/campaign-route.js";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/user", userRoute);
+app.use("/api/campaign", campaignRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello from Fund Bux backend");
