@@ -20,3 +20,38 @@ export const postCampaigns = async (req, res, next) => {
     next(error);
   }
 };
+
+// get campaigns
+export const getCampaigns = async (req, res, next) => {
+  try {
+    const campaigns = await Campaign.find({
+      ...(req.query.userId && { userId: req.query.userId }),
+      ...(req.query.category && { category: req.query.category }),
+      ...(req.query.searchTerm && {
+        $or: [
+          { title: { $regex: req.query.searchTerm, $options: "i" } },
+          { content: { $regex: req.query.searchTerm, $options: "i" } },
+        ],
+      }),
+    });
+
+    const totalCampaigns = await Campaign.countDocuments();
+
+    const now = new Date();
+    const oneMonthAgo = new Date(
+      now.getFullYear(),
+      now.getMonth() - 1,
+      now.getDate()
+    );
+    const lastMonthCampaigns = await Campaign.countDocuments({
+      createdAt: { $gte: oneMonthAgo },
+    });
+    res.status(200).json({
+      campaigns,
+      totalCampaigns,
+      lastMonthCampaigns,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
