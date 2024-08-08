@@ -1,12 +1,22 @@
 import { MenuIcon, X } from "lucide-react";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../redux/authSlice";
+import { Dropdown, DropdownItem } from "flowbite-react";
 
 export default function Header() {
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleLogOut = () => {
+    dispatch(logout());
   };
   return (
     <div className="shadow-sm shadow-slate-200 sticky top-0 bg-white z-50 bg-opacity-95">
@@ -65,12 +75,25 @@ export default function Header() {
           </div>
         </div>
         <div className="">
-          <Link
-            to="signin"
-            className=" text-lg font-semibold  px-5 py-2 bg-emerald-700 text-white rounded-md hover:bg-black "
-          >
-            Sign In
-          </Link>
+          {isAuthenticated ? (
+            <div className="">
+              <Dropdown label={user.email} dismissOnClick={true} className="">
+                <DropdownItem>
+                  <Link to="/create-campaign">Start a Campaign</Link>
+                </DropdownItem>
+                <DropdownItem onClick={handleLogOut}>Sign out</DropdownItem>
+              </Dropdown>
+              {/* <span></span>
+              <button >Log Out</button> */}
+            </div>
+          ) : (
+            <Link
+              to="signin"
+              className=" text-lg font-semibold  px-5 py-2 bg-emerald-700 text-white rounded-md hover:bg-black "
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
 

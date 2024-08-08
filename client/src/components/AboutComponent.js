@@ -1,6 +1,5 @@
-import { ArrowBigRight, CornerDownRight } from "lucide-react";
+import { CornerDownRight } from "lucide-react";
 import React from "react";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function AboutComponent() {
   const images = [

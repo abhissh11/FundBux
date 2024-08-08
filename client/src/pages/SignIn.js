@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { serverURL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/authSlice";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -30,6 +33,7 @@ export default function SignIn() {
       if (data) {
         setLoading(false);
       }
+      dispatch(login({ email: formData.email }));
       navigate("/donate");
       return data;
     } catch (error) {
