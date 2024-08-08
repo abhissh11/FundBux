@@ -17,7 +17,7 @@ export default function Cta() {
               Start a social movements and fundraising for the change
             </p>
           </div>
-          <Link to="/donate">
+          <Link to="/create-campaign">
             <button className="px-4 py-2 inline-flex gap-2 items-center bg-emerald-700 text-white text-xl font-semibold rounded-lg">
               Start a Campaign{" "}
               <span>
