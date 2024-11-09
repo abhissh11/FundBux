@@ -14,6 +14,10 @@ const campaignSchema = new mongoose.Schema(
       type: String,
       default: "uncategorized",
     },
+    target: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,

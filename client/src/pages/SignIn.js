@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { serverURL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/authSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -11,6 +13,14 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  //toast messages
+  useEffect(() => {
+    if (localStorage.getItem("showLoginToast") === "true") {
+      toast.info("You need to log in first to create campaigns.");
+      localStorage.removeItem("showLoginToast"); // Remove flag after showing toast
+    }
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -55,12 +65,11 @@ export default function SignIn() {
 
   useEffect(() => {
     if (error) {
-      const timer = setTimeout(() => {
-        setError("");
-      }, 3000);
-      return () => clearTimeout(timer);
+      toast.error(error);
+      setError("");
     }
   }, [error]);
+
   return (
     <div className="md:mx-36 mx-5 min-h-[80vh] my-5 flex items-center justify-center">
       <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-center justify-center ">
@@ -112,11 +121,6 @@ export default function SignIn() {
                 {loading ? "Loading..." : "Sign In"}
               </button>
             </form>
-            {error && (
-              <div className="text-center font-semibold text-red-500 bg-white px-3 w-fit rounded-sm">
-                <p>{error}</p>
-              </div>
-            )}
           </div>
           <p className="text-center text-md font-semibold my-2">
             Haven't registered yet?
@@ -127,6 +131,7 @@ export default function SignIn() {
           </p>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }

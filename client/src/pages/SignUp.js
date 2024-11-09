@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { serverURL } from "../utils/constants";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -52,10 +54,8 @@ export default function SignUp() {
 
   useEffect(() => {
     if (error) {
-      const timer = setTimeout(() => {
-        setError("");
-      }, 3000);
-      return () => clearTimeout(timer);
+      toast.error(error);
+      setError("");
     }
   }, [error]);
 
@@ -117,11 +117,7 @@ export default function SignUp() {
                 Sign Up
               </button>
             </form>
-            {error && (
-              <div className="text-center font-semibold text-red-500 bg-white px-3 w-fit rounded-sm">
-                <p>{error}</p>
-              </div>
-            )}
+            <ToastContainer position="top-right" autoClose={3000} />
           </div>
           <p className="text-center text-md font-semibold my-2">
             Already have an account?

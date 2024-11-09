@@ -2,15 +2,15 @@ import Campaign from "../models/campaigns-model.js";
 import { errorHandler } from "../utils/error.js";
 
 export const postCampaigns = async (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, target } = req.body;
 
-  if (!title || !description) {
-    return next(errorHandler(411, "Please provide all the required details!"));
+  if (!title || !description || !target) {
+    return next(errorHandler(400, "Please provide all the required details!"));
   }
 
   const newCampaign = new Campaign({
     ...req.body,
-    userId: req.user.id,
+    userId: "temp-user",
   });
 
   try {
