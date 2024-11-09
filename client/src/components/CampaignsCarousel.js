@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import items from "../data/data.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MessageSquareText } from "lucide-react";
+import { MessageSquareText, User } from "lucide-react";
+import axios from "axios";
 
 export default function CampaignsCarousel() {
   const settings = {
@@ -30,6 +31,24 @@ export default function CampaignsCarousel() {
     ],
   };
   const data = items.carousel;
+  const [campaigns, setCampaigns] = useState([]);
+
+  const getCampaigns = async () => {
+    try {
+      const res = await axios.get(
+        "https://fundbux-backend.onrender.com/api/campaign/getCampaigns"
+      );
+      const data = await res.data;
+      setCampaigns(data.campaigns);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getCampaigns();
+  }, []);
+  // console.log(campaigns);
 
   return (
     <div className="bg-slate-300">
@@ -67,10 +86,7 @@ export default function CampaignsCarousel() {
                           <h2 className="md:px-4 bg-emerald-700 text-center rounded-md text-md font-semibold text-white">
                             {d.funds + " raised"}
                           </h2>
-                          <MessageSquareText
-                            size={32}
-                            className="text-gray-800 p-2 bg-yellow-100 rounded-xl cursor-pointer"
-                          />
+                          <User />
                         </div>
                       </div>
                     </div>

@@ -100,7 +100,14 @@ export default function Header() {
       {/* on small screen */}
       {showMenu && (
         <>
-          <div className="h-[100vh] max-w-64 absolute px-4 right-0 bg-white border top-0  ">
+          <div className="h-[100vh] max-w-64 absolute px-4 left-0 bg-white border top-0  ">
+            <div className="right-0 absolute m-6">
+              <X
+                size={32}
+                onClick={handleMenuClick}
+                className="cursor-pointer"
+              />
+            </div>
             <div className="flex flex-col gap-5 items-center my-20">
               <Link
                 to="/campaigns"
