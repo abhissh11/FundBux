@@ -8,6 +8,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Donate from "./pages/Donate";
 import CreateCampaign from "./pages/CreateCampaign";
+// import CampaignDetail from "./pages/CampaignDetail"; // Import the new detail page
+import CampaignDetails from "./pages/CampaignDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/campaigns",
         element: <Campaigns />,
+      },
+      {
+        path: "/campaign/:id",
+        element: <CampaignDetails />,
       },
       {
         path: "/donate",

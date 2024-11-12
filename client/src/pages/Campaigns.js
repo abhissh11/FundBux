@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { HandCoins, UserIcon } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Campaigns() {
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(null);
+  const navigate = useNavigate();
 
   const getCampaigns = async () => {
     try {
@@ -63,18 +66,33 @@ export default function Campaigns() {
         {campaigns &&
           campaigns.map((c) => (
             <>
-              <div className="w-64">
-                <img src={c.image} alt={c.title} className="rounded-xl" />
-                <div className="p-2 hover:bg-gray-100 rounded-xl hover:scale-105">
-                  <h1 className="text-lg font-bold">{c.title}</h1>
-                  <p className="text-md font-thin text-gray-600">
-                    {c.description}
-                  </p>
-                  <h2 className="text-md font-semibold text-gray-700">
-                    {c.userId}
-                  </h2>
+              <Link to={`/campaign/${c.id}`} key={c.id} state={{ campaign: c }}>
+                <div
+                  className="w-64 h-72 border-2 border-gray-600 flex flex-col gap-2 rounded-xl hover:scale-105 transition-all delay-75"
+                  onClick={() =>
+                    navigate(`/campaign/${c.id}`, { state: { campaign: c } })
+                  }
+                >
+                  <img src={c.image} alt={c.title} className="rounded-xl" />
+                  <div className="p-2 hover:bg-gray-100 rounded-xl flex flex-col gap-4">
+                    <h1 className="text-lg font-bold">{c.title}</h1>
+                    <div className="flex items-center justify-between">
+                      <h2 className=" px-4 py-2 bg-gray-900 text-white rounded-lg">
+                        -- raised{" "}
+                      </h2>
+                      <button
+                        className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg
+                    hover:bg-green-700"
+                      >
+                        <span>
+                          <HandCoins />
+                        </span>
+                        Donate
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </>
           ))}
       </div>
